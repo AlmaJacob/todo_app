@@ -15,6 +15,11 @@ function List(){
         setEditing(true)
         setEditData(task)
     }
+    const Delete_dtls=(id) =>{
+        axios.delete('http://127.0.0.1:8000/api/todo/').then((res)=>{
+            setData(data.filter((task)=>task.id))
+        }).catch(error=>console.log(error.message))
+    }
     return(
         <div className="container">
             <h1>Display Details</h1>
